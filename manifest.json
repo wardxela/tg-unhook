@@ -1,0 +1,14 @@
+{
+	"manifest_version": 3,
+	"name": "Telegram Unhook",
+	"version": "1.0",
+	"description": "Hide unwanted sections from Telegram web client",
+	"permissions": ["scripting", "activeTab"],
+	"host_permissions": ["*://web.telegram.org/a/*"],
+	"content_scripts": [
+		{
+			"matches": ["*://web.telegram.org/a/*"],
+			"js": ["content.js"]
+		}
+	]
+}
