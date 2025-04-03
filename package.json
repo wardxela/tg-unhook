@@ -3,25 +3,15 @@
 	"private": true,
 	"scripts": {
 		"build": "bun build ./src/content.ts --outdir ./dist --asset-naming \"[dir]\"/\"[name].[ext]\"",
-		"dev": "bun run build -- --watch"
+		"dev": "bun run build -- --watch",
+		"zip": "cd dist && zip -r -FS ../tg-unhook.zip *",
+		"prod": "bun run build && bun run zip",
+		"clean": "git clean -xdf node_modules dist tg-unhook.zip"
 	},
 	"devDependencies": {
 		"@types/bun": "latest"
 	},
 	"peerDependencies": {
 		"typescript": "^5"
-	},
-	"action": {
-		"default_icon": {
-			"16": "icons/16x16.png",
-			"48": "icons/48x48.png",
-			"128": "icons/128x128.png"
-		},
-		"default_title": "Apply Custom CSS"
-	},
-	"icons": {
-		"16": "icons/16x16.png",
-		"48": "icons/48x48.png",
-		"128": "icons/128x128.png"
 	}
 }
